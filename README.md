@@ -16,6 +16,15 @@ https://zamira04.github.io/homerent/
 - HTML
 - CSS
 - JavaScript
+## 📸 Screenshots
 
+### 🏠 Home Page
+![Home](home.jpg)
+
+### 🏢 Catalog
+![Catalog](catalog.jpg)
+
+### 📝 Register
+![Register](register.jpg)
 ## 👩‍💻 Author
 Zamira
