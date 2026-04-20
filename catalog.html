@@ -1,0 +1,354 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>房源列表 | 悦居 HomeNest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">悦</span>
+          <div>
+            <strong>悦居 HomeNest</strong>
+            <span>精品房源 · 城市精选</span>
+          </div>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="打开菜单">☰</button>
+        <nav class="main-nav" id="mainNav">
+          <a href="index.html">首页</a>
+          <a href="catalog.html">房源列表</a>
+          <a href="details.html">房源详情</a>
+          <a href="booking.html">在线预订</a>
+          <a href="login.html">登录</a>
+          <a href="register.html" class="nav-cta">免费注册</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero page-hero-soft">
+        <div class="container page-hero-inner">
+          <span class="section-kicker">房源目录</span>
+          <h1>更多城市选择，更完整的租房体验</h1>
+          <p>支持按关键词、区域、户型与预算进行筛选。点击“查看详情”可进入详情页并继续在线预订。</p>
+        </div>
+      </section>
+
+      <section class="section filter-section">
+        <div class="container">
+          <div class="filter-panel">
+            <div class="filter-grid">
+              <div class="filter-group">
+                <label for="keyword">关键词搜索</label>
+                <input id="keyword" type="text" placeholder="例如：静安、复式、地铁、江景" />
+              </div>
+              <div class="filter-group">
+                <label for="district">区域</label>
+                <select id="district">
+                  <option value="all">全部区域</option>
+                  <option value="浦东新区">浦东新区</option>
+                  <option value="静安区">静安区</option>
+                  <option value="长宁区">长宁区</option>
+                  <option value="徐汇区">徐汇区</option>
+                  <option value="黄浦区">黄浦区</option>
+                  <option value="闵行区">闵行区</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label for="type">户型类型</label>
+                <select id="type">
+                  <option value="all">全部类型</option>
+                  <option value="一居室">一居室</option>
+                  <option value="两居室">两居室</option>
+                  <option value="三居室">三居室</option>
+                  <option value="别墅">别墅</option>
+                  <option value="复式">复式</option>
+                  <option value="Studio">Studio</option>
+                </select>
+              </div>
+              <div class="filter-group">
+                <label for="price">预算范围</label>
+                <select id="price">
+                  <option value="all">全部预算</option>
+                  <option value="0-5000">¥ 5000 以下</option>
+                  <option value="5000-8000">¥ 5000 - 8000</option>
+                  <option value="8000-12000">¥ 8000 - 12000</option>
+                  <option value="12000-99999">¥ 12000 以上</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="filter-actions">
+              <button class="btn btn-primary" id="filterBtn">开始筛选</button>
+              <button class="btn btn-secondary" id="resetBtn">重置条件</button>
+              <p id="resultCount">共展示 12 套房源</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="section listings-section">
+        <div class="container">
+          <div class="listing-grid" id="listingGrid"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>悦居 HomeNest</h3>
+          <p>高品质租房作品集项目，展示现代 UI、筛选逻辑与预订流程。</p>
+        </div>
+        <div>
+          <h4>页面导航</h4>
+          <a href="index.html">首页</a>
+          <a href="details.html">详情页</a>
+          <a href="booking.html">预订页</a>
+        </div>
+        <div>
+          <h4>服务支持</h4>
+          <span>7 × 12 客服在线</span>
+          <span>精选真实房源</span>
+          <span>预约看房更高效</span>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>© 2026 悦居 HomeNest. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      const menuToggle = document.getElementById("menuToggle");
+      const mainNav = document.getElementById("mainNav");
+      menuToggle.addEventListener("click", () => mainNav.classList.toggle("active"));
+
+      const properties = [
+        {
+          id: "skyline",
+          name: "云境天际公寓",
+          district: "浦东新区",
+          type: "两居室",
+          price: 6800,
+          rating: 4.9,
+          tag: "高人气",
+          image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
+          desc: "2室1厅 · 落地窗 · 近陆家嘴",
+        },
+        {
+          id: "garden",
+          name: "梧桐花园住宅",
+          district: "长宁区",
+          type: "三居室",
+          price: 9200,
+          rating: 4.8,
+          tag: "家庭优选",
+          image: "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
+          desc: "3室2厅 · 安静社区 · 绿化优越",
+        },
+        {
+          id: "studio",
+          name: "城市轻奢 Studio",
+          district: "静安区",
+          type: "Studio",
+          price: 4600,
+          rating: 4.7,
+          tag: "通勤便利",
+          image: "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80",
+          desc: "1室 · 双地铁 · 精致一人居",
+        },
+        {
+          id: "riverfront",
+          name: "江景国际公馆",
+          district: "黄浦区",
+          type: "两居室",
+          price: 11800,
+          rating: 4.9,
+          tag: "江景视野",
+          image: "https://images.unsplash.com/photo-1502005229762-cf1b2da7c5d6?auto=format&fit=crop&w=1200&q=80",
+          desc: "2室2厅 · 高层江景 · 智能家居",
+        },
+        {
+          id: "loft",
+          name: "光影设计复式",
+          district: "徐汇区",
+          type: "复式",
+          price: 7600,
+          rating: 4.8,
+          tag: "设计感",
+          image: "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80",
+          desc: "复式 Loft · 开放式格局 · 采光极佳",
+        },
+        {
+          id: "villa",
+          name: "林语溪岸别墅",
+          district: "闵行区",
+          type: "别墅",
+          price: 15800,
+          rating: 5.0,
+          tag: "高端独栋",
+          image: "https://images.unsplash.com/photo-1448630360428-65456885c650?auto=format&fit=crop&w=1200&q=80",
+          desc: "4室3厅 · 私家庭院 · 双车位",
+        },
+        {
+          id: "metro",
+          name: "都会生活一居",
+          district: "静安区",
+          type: "一居室",
+          price: 5200,
+          rating: 4.6,
+          tag: "年轻首选",
+          image: "https://images.unsplash.com/photo-1502672023488-70e25813eb80?auto=format&fit=crop&w=1200&q=80",
+          desc: "1室1厅 · 地铁口 · 家电齐全",
+        },
+        {
+          id: "art",
+          name: "艺境白领公寓",
+          district: "徐汇区",
+          type: "两居室",
+          price: 8300,
+          rating: 4.8,
+          tag: "办公友好",
+          image: "https://images.unsplash.com/photo-1505692952047-1a78307da8f2?auto=format&fit=crop&w=1200&q=80",
+          desc: "2室1厅 · 书房区域 · 适合远程办公",
+        },
+        {
+          id: "central",
+          name: "中央都会公寓",
+          district: "黄浦区",
+          type: "一居室",
+          price: 5900,
+          rating: 4.7,
+          tag: "核心地段",
+          image: "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1200&q=80",
+          desc: "1室1厅 · 商圈核心 · 夜景优美",
+        },
+        {
+          id: "lake",
+          name: "湖畔静居两房",
+          district: "浦东新区",
+          type: "两居室",
+          price: 7100,
+          rating: 4.7,
+          tag: "安静舒适",
+          image: "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+          desc: "2室1厅 · 湖景社区 · 适合情侣",
+        },
+        {
+          id: "family",
+          name: "亲子阳光家园",
+          district: "长宁区",
+          type: "三居室",
+          price: 9800,
+          rating: 4.9,
+          tag: "学区优选",
+          image: "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=1200&q=80",
+          desc: "3室2厅 · 儿童友好 · 社区成熟",
+        },
+        {
+          id: "zen",
+          name: "木语禅意小宅",
+          district: "闵行区",
+          type: "一居室",
+          price: 4300,
+          rating: 4.5,
+          tag: "高性价比",
+          image: "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
+          desc: "1室 · 原木风 · 环境安静",
+        },
+      ];
+
+      const listingGrid = document.getElementById("listingGrid");
+      const keyword = document.getElementById("keyword");
+      const district = document.getElementById("district");
+      const type = document.getElementById("type");
+      const price = document.getElementById("price");
+      const resultCount = document.getElementById("resultCount");
+      const filterBtn = document.getElementById("filterBtn");
+      const resetBtn = document.getElementById("resetBtn");
+
+      function renderCards(data) {
+        listingGrid.innerHTML = data
+          .map(
+            (item) => `
+              <article class="listing-card">
+                <img src="${item.image}" alt="${item.name}" />
+                <div class="listing-body">
+                  <div class="listing-top">
+                    <span class="pill">${item.tag}</span>
+                    <span class="rating">★ ${item.rating}</span>
+                  </div>
+                  <h3>${item.name}</h3>
+                  <p>${item.district} · ${item.desc}</p>
+                  <div class="listing-meta-inline">
+                    <span>${item.type}</span>
+                    <span>支持线上预约</span>
+                  </div>
+                  <div class="listing-bottom vertical-mobile">
+                    <strong>¥ ${item.price.toLocaleString("zh-CN")} / 月</strong>
+                    <div class="listing-actions">
+                      <a href="details.html?property=${item.id}">查看详情</a>
+                      <a class="ghost-link" href="booking.html?property=${item.id}">立即预订</a>
+                    </div>
+                  </div>
+                </div>
+              </article>
+            `,
+          )
+          .join("");
+
+        resultCount.textContent = `共展示 ${data.length} 套房源`;
+      }
+
+      function applyFilters() {
+        const keywordValue = keyword.value.trim().toLowerCase();
+        const districtValue = district.value;
+        const typeValue = type.value;
+        const priceValue = price.value;
+
+        const filtered = properties.filter((item) => {
+          const matchKeyword =
+            !keywordValue ||
+            item.name.toLowerCase().includes(keywordValue) ||
+            item.district.toLowerCase().includes(keywordValue) ||
+            item.desc.toLowerCase().includes(keywordValue) ||
+            item.tag.toLowerCase().includes(keywordValue);
+
+          const matchDistrict = districtValue === "all" || item.district === districtValue;
+          const matchType = typeValue === "all" || item.type === typeValue;
+
+          let matchPrice = true;
+          if (priceValue !== "all") {
+            const [min, max] = priceValue.split("-").map(Number);
+            matchPrice = item.price >= min && item.price <= max;
+          }
+
+          return matchKeyword && matchDistrict && matchType && matchPrice;
+        });
+
+        renderCards(filtered);
+      }
+
+      filterBtn.addEventListener("click", applyFilters);
+      resetBtn.addEventListener("click", () => {
+        keyword.value = "";
+        district.value = "all";
+        type.value = "all";
+        price.value = "all";
+        renderCards(properties);
+      });
+
+      renderCards(properties);
+    </script>
+  </body>
+</html>

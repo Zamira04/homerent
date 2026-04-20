@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>房源详情 | 悦居 HomeNest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">悦</span>
+          <div>
+            <strong>悦居 HomeNest</strong>
+            <span>完整详情页展示</span>
+          </div>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="打开菜单">☰</button>
+        <nav class="main-nav" id="mainNav">
+          <a href="index.html">首页</a>
+          <a href="catalog.html">房源列表</a>
+          <a href="details.html">房源详情</a>
+          <a href="booking.html">在线预订</a>
+          <a href="login.html">登录</a>
+          <a href="register.html" class="nav-cta">免费注册</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero page-hero-dark">
+        <div class="container page-hero-inner narrow-left">
+          <span class="section-kicker">详情展示页</span>
+          <h1 id="detailTitle">云境天际公寓</h1>
+          <p id="detailSub">浦东新区 · 2室1厅 · 落地窗全景视野 · 高品质精装</p>
+        </div>
+      </section>
+
+      <section class="section detail-page-section">
+        <div class="container detail-layout">
+          <div class="detail-main">
+            <div class="detail-gallery">
+              <img id="detailMainImage" src="" alt="房源主图" class="detail-main-image" />
+              <div class="thumb-grid" id="thumbGrid"></div>
+            </div>
+
+            <div class="detail-info-card">
+              <div class="detail-header-row">
+                <div>
+                  <span class="pill" id="detailTag">高人气精选</span>
+                  <h2 id="detailHeading">云境天际公寓</h2>
+                  <p id="detailLocation">浦东新区 · 近陆家嘴 · 步行到地铁站约 6 分钟</p>
+                </div>
+                <div class="price-box">
+                  <strong id="detailPrice">¥ 6,800 / 月</strong>
+                  <span>支持线上预约与快速咨询</span>
+                </div>
+              </div>
+
+              <div class="quick-specs" id="quickSpecs"></div>
+
+              <div class="content-section">
+                <h3>房源介绍</h3>
+                <p id="detailDescription"></p>
+              </div>
+
+              <div class="content-section">
+                <h3>精选亮点</h3>
+                <div class="chips" id="highlightChips"></div>
+              </div>
+
+              <div class="content-section">
+                <h3>配套设施</h3>
+                <div class="amenity-grid" id="amenityGrid"></div>
+              </div>
+
+              <div class="content-section">
+                <h3>周边生活</h3>
+                <div class="surrounding-grid">
+                  <article>
+                    <strong>交通</strong>
+                    <p id="transportInfo">步行 6 分钟可达地铁站，通勤高效。</p>
+                  </article>
+                  <article>
+                    <strong>商业</strong>
+                    <p id="businessInfo">周边商场、咖啡馆和超市齐全，生活便利。</p>
+                  </article>
+                  <article>
+                    <strong>适合人群</strong>
+                    <p id="fitInfo">适合白领、情侣、小家庭和远程办公人群。</p>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="detail-sidebar">
+            <div class="sidebar-card sticky-card">
+              <h3>预约摘要</h3>
+              <div class="sidebar-line"><span>房源名称</span><strong id="sideName">云境天际公寓</strong></div>
+              <div class="sidebar-line"><span>月租价格</span><strong id="sidePrice">¥ 6,800</strong></div>
+              <div class="sidebar-line"><span>评分</span><strong id="sideRating">4.9 / 5</strong></div>
+              <div class="sidebar-line"><span>状态</span><strong>可预约</strong></div>
+              <div class="sidebar-divider"></div>
+              <a class="btn btn-primary full-width" id="bookingLink" href="booking.html?property=skyline">立即预订</a>
+              <a class="btn btn-secondary full-width" href="catalog.html">返回房源列表</a>
+              <p class="sidebar-note">支持在线看房咨询、快速预订与个性化备注填写。</p>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <div>
+          <h3>悦居 HomeNest</h3>
+          <p>通过更完整的详情页结构，展示真实租房平台的页面层级与信息组织能力。</p>
+        </div>
+        <div>
+          <h4>更多页面</h4>
+          <a href="catalog.html">查看更多房源</a>
+          <a href="booking.html">进入预订页</a>
+        </div>
+        <div>
+          <h4>项目特点</h4>
+          <span>参数联动</span>
+          <span>模块化布局</span>
+          <span>响应式展示</span>
+        </div>
+      </div>
+      <div class="container footer-bottom">
+        <p>© 2026 悦居 HomeNest. All Rights Reserved.</p>
+      </div>
+    </footer>
+
+    <script>
+      const menuToggle = document.getElementById("menuToggle");
+      const mainNav = document.getElementById("mainNav");
+      menuToggle.addEventListener("click", () => mainNav.classList.toggle("active"));
+
+      const propertyData = {
+        skyline: {
+          name: "云境天际公寓",
+          subtitle: "浦东新区 · 2室1厅 · 落地窗全景视野 · 高品质精装",
+          location: "浦东新区 · 近陆家嘴 · 步行到地铁站约 6 分钟",
+          price: 6800,
+          rating: 4.9,
+          tag: "高人气精选",
+          area: "89㎡",
+          room: "2室1厅",
+          floor: "高层",
+          fit: "白领 / 情侣 / 小家庭",
+          transport: "步行 6 分钟可达地铁 2 号线，20 分钟到核心商圈。",
+          business: "楼下有精品超市、健身房、咖啡馆和生活广场。",
+          fitInfo: "适合追求品质生活、重视通勤效率和居住审美的人群。",
+          description:
+            "这套房源以现代简约风格为主，拥有宽阔采光面和大面积落地窗，室内家具、电器与储物空间配置完整。客厅开阔舒适，卧室安静私密，适合希望在城市中同时拥有效率与品质感的租客。",
+          highlights: ["全景落地窗", "精装拎包入住", "智能门锁", "洗烘一体", "通勤便利", "高层视野"],
+          amenities: ["中央空调", "高速 Wi‑Fi", "洗衣机", "冰箱", "独立厨房", "品牌卫浴", "门禁系统", "24h 安保"],
+          images: [
+            "https://images.unsplash.com/photo-1505693416388-ac5ce068fe85?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80",
+          ],
+        },
+        garden: {
+          name: "梧桐花园住宅",
+          subtitle: "长宁区 · 3室2厅 · 绿化社区 · 家庭优选",
+          location: "长宁区 · 成熟社区 · 学校与公园资源丰富",
+          price: 9200,
+          rating: 4.8,
+          tag: "家庭优选",
+          area: "132㎡",
+          room: "3室2厅",
+          floor: "中高层",
+          fit: "家庭 / 亲子 / 长租",
+          transport: "驾车与地铁出行都很便利，周边道路成熟。",
+          business: "靠近大型商超、菜场、儿童活动中心与社区医院。",
+          fitInfo: "特别适合有孩子的家庭或重视居住稳定性的长期租客。",
+          description:
+            "房源位于安静舒适的成熟住宅区，户型方正、动静分区合理，客餐厅一体化提升空间感。主卧宽敞明亮，儿童房灵活实用，整体氛围温馨，是典型的高品质家庭居住选择。",
+          highlights: ["家庭型大空间", "社区绿化好", "储物丰富", "儿童友好", "采光通透", "安静安全"],
+          amenities: ["地暖", "双卫设计", "燃气厨房", "全屋收纳", "空调", "净水系统", "儿童活动区", "社区停车位"],
+          images: [
+            "https://images.unsplash.com/photo-1494526585095-c41746248156?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1560185007-cde436f6a4d0?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1502672023488-70e25813eb80?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1512917774080-9991f1c4c750?auto=format&fit=crop&w=1200&q=80",
+          ],
+        },
+        studio: {
+          name: "城市轻奢 Studio",
+          subtitle: "静安区 · 1室 · 双地铁交汇 · 年轻首选",
+          location: "静安区 · 商圈近邻 · 通勤效率极高",
+          price: 4600,
+          rating: 4.7,
+          tag: "通勤便利",
+          area: "46㎡",
+          room: "Studio",
+          floor: "中层",
+          fit: "单人居住 / 年轻白领",
+          transport: "双地铁交汇，步行 4 分钟到站，生活半径灵活。",
+          business: "周边餐饮、健身房、便利店、书店与联合办公空间齐全。",
+          fitInfo: "适合预算明确、重视效率与时尚感的年轻租客。",
+          description:
+            "这是一套面向年轻白领打造的精致型单身公寓，空间布局紧凑却不拥挤。床、沙发、餐吧与收纳区域安排合理，既适合高效通勤，也适合下班后享受轻松独处时光。",
+          highlights: ["小而精致", "双地铁", "独立卫浴", "开放式餐吧", "家电齐全", "预算友好"],
+          amenities: ["高速网络", "空调", "微波炉", "洗衣机", "衣柜", "书桌", "智能门禁", "快递柜"],
+          images: [
+            "https://images.unsplash.com/photo-1484154218962-a197022b5858?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1493809842364-78817add7ffb?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1505692952047-1a78307da8f2?auto=format&fit=crop&w=1200&q=80",
+            "https://images.unsplash.com/photo-1460317442991-0ec209397118?auto=format&fit=crop&w=1200&q=80",
+          ],
+        },
+      };
+
+      const params = new URLSearchParams(window.location.search);
+      const propertyKey = params.get("property") || "skyline";
+      const property = propertyData[propertyKey] || propertyData.skyline;
+
+      document.getElementById("detailTitle").textContent = property.name;
+      document.getElementById("detailSub").textContent = property.subtitle;
+      document.getElementById("detailTag").textContent = property.tag;
+      document.getElementById("detailHeading").textContent = property.name;
+      document.getElementById("detailLocation").textContent = property.location;
+      document.getElementById("detailPrice").textContent = `¥ ${property.price.toLocaleString("zh-CN")} / 月`;
+      document.getElementById("detailDescription").textContent = property.description;
+      document.getElementById("transportInfo").textContent = property.transport;
+      document.getElementById("businessInfo").textContent = property.business;
+      document.getElementById("fitInfo").textContent = property.fitInfo;
+      document.getElementById("sideName").textContent = property.name;
+      document.getElementById("sidePrice").textContent = `¥ ${property.price.toLocaleString("zh-CN")}`;
+      document.getElementById("sideRating").textContent = `${property.rating} / 5`;
+      document.getElementById("bookingLink").href = `booking.html?property=${propertyKey}`;
+
+      const detailMainImage = document.getElementById("detailMainImage");
+      const thumbGrid = document.getElementById("thumbGrid");
+      detailMainImage.src = property.images[0];
+      detailMainImage.alt = property.name;
+
+      thumbGrid.innerHTML = property.images
+        .map(
+          (img, index) => `
+            <button class="thumb-button ${index === 0 ? "active" : ""}" data-img="${img}">
+              <img src="${img}" alt="${property.name} 缩略图 ${index + 1}" />
+            </button>
+          `,
+        )
+        .join("");
+
+      thumbGrid.addEventListener("click", (e) => {
+        const button = e.target.closest(".thumb-button");
+        if (!button) return;
+        detailMainImage.src = button.dataset.img;
+        document.querySelectorAll(".thumb-button").forEach((item) => item.classList.remove("active"));
+        button.classList.add("active");
+      });
+
+      document.getElementById("quickSpecs").innerHTML = `
+        <div class="spec-card"><span>面积</span><strong>${property.area}</strong></div>
+        <div class="spec-card"><span>户型</span><strong>${property.room}</strong></div>
+        <div class="spec-card"><span>楼层</span><strong>${property.floor}</strong></div>
+        <div class="spec-card"><span>适合人群</span><strong>${property.fit}</strong></div>
+      `;
+
+      document.getElementById("highlightChips").innerHTML = property.highlights
+        .map((item) => `<span class="chip">${item}</span>`)
+        .join("");
+
+      document.getElementById("amenityGrid").innerHTML = property.amenities
+        .map((item) => `<div class="amenity-item">✔ ${item}</div>`)
+        .join("");
+    </script>
+  </body>
+</html>

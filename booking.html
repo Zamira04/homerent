@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>在线预订 | 悦居 HomeNest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="booking.css" />
+  </head>
+  <body>
+    <header class="booking-header">
+      <div class="container header-shell">
+        <a class="brand-link" href="index.html">
+          <span class="brand-icon">悦</span>
+          <div>
+            <strong>悦居 HomeNest</strong>
+            <span>在线预订中心</span>
+          </div>
+        </a>
+
+        <button class="menu-toggle" id="menuToggle" aria-label="打开菜单">☰</button>
+
+        <nav class="booking-nav" id="navMenu">
+          <a href="index.html">首页</a>
+          <a href="catalog.html">房源列表</a>
+          <a href="details.html">房源详情</a>
+          <a href="booking.html">在线预订</a>
+          <a href="login.html">登录</a>
+          <a href="register.html" class="nav-highlight">注册</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="booking-hero">
+        <div class="container booking-hero-grid">
+          <div class="booking-hero-copy">
+            <span class="badge">快速预约</span>
+            <h1>填写入住信息，轻松完成在线预订</h1>
+            <p>
+              本页面支持根据所选房源自动更新名称与价格，并根据入住日期实时计算住宿天数与预估总价，让项目更具真实业务逻辑感。
+            </p>
+
+            <div class="hero-points">
+              <span>✔ 自动联动房源信息</span>
+              <span>✔ 日期与总价即时计算</span>
+              <span>✔ 适合作品集展示</span>
+            </div>
+          </div>
+
+          <div class="booking-property-card">
+            <img id="propertyImage" src="" alt="房源图片" />
+            <div class="property-card-body">
+              <div class="label-row">
+                <span class="mini-badge" id="propertyTag">精选推荐</span>
+                <span class="mini-rating" id="propertyRating">★ 4.9</span>
+              </div>
+              <h2 id="propertyName">云境天际公寓</h2>
+              <p id="propertyDesc">浦东新区 · 2室1厅 · 高品质精装 · 通勤便利</p>
+              <strong id="propertyPrice">¥ 680 / 晚</strong>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="booking-main-section">
+        <div class="container booking-layout">
+          <section class="booking-form-card">
+            <div class="section-title">
+              <h2>填写预订信息</h2>
+              <p>请输入租客信息、入住时间、人数与需求备注，我们会自动生成预订摘要。</p>
+            </div>
+
+            <form id="bookingForm" class="booking-form">
+              <div class="form-grid">
+                <div class="form-group">
+                  <label for="fullName">联系人姓名</label>
+                  <input type="text" id="fullName" placeholder="请输入姓名" required />
+                </div>
+                <div class="form-group">
+                  <label for="email">邮箱地址</label>
+                  <input type="email" id="email" placeholder="请输入邮箱" required />
+                </div>
+                <div class="form-group">
+                  <label for="phone">联系电话</label>
+                  <input type="tel" id="phone" placeholder="请输入手机号" required />
+                </div>
+                <div class="form-group">
+                  <label for="guests">入住人数</label>
+                  <select id="guests" required>
+                    <option value="">请选择人数</option>
+                    <option value="1">1 人</option>
+                    <option value="2">2 人</option>
+                    <option value="3">3 人</option>
+                    <option value="4">4 人</option>
+                    <option value="5">5 人</option>
+                    <option value="6">6 人</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="checkIn">入住日期</label>
+                  <input type="date" id="checkIn" required />
+                </div>
+                <div class="form-group">
+                  <label for="checkOut">退房日期</label>
+                  <input type="date" id="checkOut" required />
+                </div>
+                <div class="form-group">
+                  <label for="roomType">意向房型</label>
+                  <select id="roomType">
+                    <option>标准入住方案</option>
+                    <option>安静楼层优先</option>
+                    <option>高层景观优先</option>
+                    <option>家庭入住方案</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="arrivalTime">预计到达时间</label>
+                  <select id="arrivalTime">
+                    <option>14:00 - 16:00</option>
+                    <option>16:00 - 18:00</option>
+                    <option>18:00 - 20:00</option>
+                    <option>20:00 以后</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="request">备注 / 特殊需求</label>
+                <textarea
+                  id="request"
+                  rows="5"
+                  placeholder="例如：希望高层安静房间、需要办公桌、提前入住、儿童入住需求等"
+                ></textarea>
+              </div>
+
+              <div class="booking-benefits">
+                <div>✓ 平台确认更快速</div>
+                <div>✓ 支持个性化入住备注</div>
+                <div>✓ 信息提交后即时反馈</div>
+              </div>
+
+              <div class="form-actions">
+                <button type="submit" class="submit-btn">提交预订申请</button>
+                <button type="reset" class="secondary-btn">清空表单</button>
+              </div>
+            </form>
+          </section>
+
+          <aside class="booking-sidebar">
+            <div class="summary-card">
+              <h3>预订摘要</h3>
+
+              <div class="summary-item">
+                <span>房源名称</span>
+                <strong id="summaryProperty">云境天际公寓</strong>
+              </div>
+              <div class="summary-item">
+                <span>单晚价格</span>
+                <strong id="pricePerNight">¥ 680</strong>
+              </div>
+              <div class="summary-item">
+                <span>入住日期</span>
+                <strong id="summaryCheckIn">—</strong>
+              </div>
+              <div class="summary-item">
+                <span>退房日期</span>
+                <strong id="summaryCheckOut">—</strong>
+              </div>
+              <div class="summary-item">
+                <span>入住天数</span>
+                <strong id="summaryNights">0 晚</strong>
+              </div>
+              <div class="summary-item">
+                <span>入住人数</span>
+                <strong id="summaryGuests">—</strong>
+              </div>
+              <div class="summary-divider"></div>
+              <div class="summary-total">
+                <span>预估总价</span>
+                <strong id="summaryTotal">¥ 0</strong>
+              </div>
+              <p class="summary-note">价格会根据入住天数自动更新。此页面为作品集展示版本，适合静态部署。</p>
+            </div>
+
+            <div class="support-card">
+              <h3>服务说明</h3>
+              <ul>
+                <li>支持在线提交看房与入住申请</li>
+                <li>可填写备注说明个性化需求</li>
+                <li>页面已适配移动端与桌面端</li>
+              </ul>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+
+    <div class="toast" id="toast">预订申请已提交，我们会尽快联系你。</div>
+
+    <script src="booking.js"></script>
+  </body>
+</html>

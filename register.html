@@ -1,0 +1,99 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>注册 | 悦居 HomeNest</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="index.html">
+          <span class="brand-mark">悦</span>
+          <div>
+            <strong>悦居 HomeNest</strong>
+            <span>创建专属账户</span>
+          </div>
+        </a>
+        <button class="menu-toggle" id="menuToggle" aria-label="打开菜单">☰</button>
+        <nav class="main-nav" id="mainNav">
+          <a href="index.html">首页</a>
+          <a href="catalog.html">房源列表</a>
+          <a href="details.html">房源详情</a>
+          <a href="booking.html">在线预订</a>
+          <a href="login.html">登录</a>
+          <a href="register.html" class="nav-cta">免费注册</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="auth-page-shell register-layout">
+      <section class="auth-visual-panel auth-visual-alt">
+        <div class="auth-visual-content">
+          <span class="section-kicker">会员注册</span>
+          <h1>创建账户，开启更高效的在线看房体验</h1>
+          <p>注册后可同步收藏列表、提交预约申请、查看房源历史记录，还可获取平台个性化推荐。</p>
+
+          <div class="stats-box-grid">
+            <div><strong>1200+</strong><span>精选房源</span></div>
+            <div><strong>300+</strong><span>每日新增咨询</span></div>
+            <div><strong>96%</strong><span>平台推荐匹配度</span></div>
+          </div>
+        </div>
+      </section>
+
+      <section class="auth-form-panel">
+        <div class="auth-card-pro">
+          <div class="auth-card-header">
+            <h2>免费注册</h2>
+            <p>填写以下信息即可快速创建账号</p>
+          </div>
+
+          <form class="auth-form-pro auth-form-2col">
+            <div class="input-group">
+              <label for="registerName">姓名</label>
+              <input id="registerName" type="text" placeholder="请输入姓名" required />
+            </div>
+            <div class="input-group">
+              <label for="registerPhone">手机号</label>
+              <input id="registerPhone" type="tel" placeholder="请输入手机号" required />
+            </div>
+            <div class="input-group full-grid">
+              <label for="registerEmail">邮箱地址</label>
+              <input id="registerEmail" type="email" placeholder="请输入邮箱地址" required />
+            </div>
+            <div class="input-group">
+              <label for="registerPassword">设置密码</label>
+              <input id="registerPassword" type="password" placeholder="请输入密码" required />
+            </div>
+            <div class="input-group">
+              <label for="registerConfirm">确认密码</label>
+              <input id="registerConfirm" type="password" placeholder="请再次输入密码" required />
+            </div>
+
+            <label class="checkbox-line full-grid">
+              <input type="checkbox" required /> 我已阅读并同意平台服务协议与隐私政策
+            </label>
+
+            <button class="btn btn-primary full-width full-grid" type="submit">创建账户</button>
+          </form>
+
+          <p class="auth-switch-text">已经有账户？<a href="login.html">立即登录</a></p>
+        </div>
+      </section>
+    </main>
+
+    <script>
+      const menuToggle = document.getElementById("menuToggle");
+      const mainNav = document.getElementById("mainNav");
+      menuToggle.addEventListener("click", () => mainNav.classList.toggle("active"));
+    </script>
+  </body>
+</html>
