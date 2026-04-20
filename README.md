@@ -1,6 +1,8 @@
 # 🏠 HomeRent
 
 Modern rental website with booking system.
+This is a modern rental platform UI built as a frontend portfolio project.
+It demonstrates responsive design, multi-page navigation, and booking logic.
 
 ## 🌐 Live Demo
 https://zamira04.github.io/homerent/
